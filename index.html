@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- fav icon -->
+    <!-- <link rel="icon" type="image/x-icon" href=".\basics\favicon_io\favicon.ico"> -->
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/basics/hindustan-motorsports.png"
+    />
+    <!-- <link
+      rel="apple-touch-icon-precomposed"
+      sizes="57x57"
+      href="favicon-57.png" 
+    />
+    <link rel="apple-touch-icon" sizes="72x72" href="favicon-72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="favicon-114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="favicon-120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="favicon-144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="favicon-152.png" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Combination 3 
+     Header Font: Audiowide 
+    Body Font: Teko -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Teko:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Roboto  -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Montserrat -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!--lottie -->
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+
+    <title>HINDUSTAN MOTORSPORTS</title>
+    <style>
+      body{
+        background-color: black;
+      }
+      /* Pre-loader style */
+      #preloader {
+        position: fixed;
+        top: 88px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <!-- Loading -->
+    <div id="preloader">
+      <dotlottie-player
+        src="https://lottie.host/3a76d35b-cc3a-4f0d-be91-c75d3213b89e/pDZSRWSuD5.json"
+        background="transparent"
+        speed="5"
+        style="width: 500px; height: 500px"
+        loop
+       
+        autoplay
+      ></dotlottie-player>
+    </div>
+    <script>
+      // to remove the loader
+      window.addEventListener("load", function () {
+        const preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.display = "none";
+        }
+      });
+    </script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
