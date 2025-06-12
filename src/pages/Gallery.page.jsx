@@ -4,7 +4,7 @@ import { hideLoader, showLoader } from "../helper/loader";
 
 const GalleryPage = () => {
   useEffect(()=>{
-  showLoader();
+  // showLoader();
   },[])
 
   const handleLoader = (index) => {
