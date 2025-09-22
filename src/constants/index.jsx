@@ -227,11 +227,65 @@ export const kartEvents = [
       id: 5,
       heading: "Season 5",
       subHeading: [
-        "VENUE-RPM INTERNATIONAL RACING CIRCUIT, BHOPAL",
-        "FINAL EVENT- 2-5 SEPTEMBER 2025",
+        "VENUE- IES University & RPM INTERNATIONAL RACING CIRCUIT, BHOPAL",
+        "FINAL EVENT- 1-4 October 2025",
         "PRIZE MONEY- 5.2 LAKHS",
         "CATEGORIES- IC-Kart, E-KART",
         "REGISTRATION FEE- 32,500 INR",
+      ],
+      awards: null,
+    },
+  },
+  {
+    year: "Sept 2026",
+    direction: "lft",
+    img: assets.seasonSection.hfkcLogo,
+    host: "Hindustan Formula Karting Championship",
+    data: {
+      id: 5,
+      heading: "Season 6",
+      subHeading: [
+        `VENUE- Janson's Institute Of Technology & CoAstt High Performance Centre, Coimbatore`,
+        "FINAL EVENT- 1-4 SEPTEMBER 2026",
+        "PRIZE MONEY- upto 5 LAKHS",
+        "CATEGORIES- IC-Kart, E-KART",
+        "REGISTRATION FEE- 30,000 INR + GST",
+      ],
+      awards: null,
+    },
+  },
+];
+export const bikeEvents = [
+  {
+    year: "Oct 2025",
+    direction: "ryt",
+    img: assets.seasonSection.eBike,
+    host: "Hindustan Formula Karting Championship",
+    data: {
+      id: 5,
+      heading: "Season 1",
+      subHeading: [
+        `VENUE- IES University & RPM INTERNATIONAL RACING CIRCUIT, BHOPAL`,
+        "FINAL EVENT- 1-4 October 2025",
+        "PRIZE MONEY- upto 2 LAKHS",
+        "REGISTRATION FEE- 25,000 INR",
+      ],
+      awards: null,
+    },
+  },
+  {
+    year: "Sept 2026",
+    direction: "lft",
+    img: assets.seasonSection.eBike,
+    host: "Hindustan Formula Karting Championship",
+    data: {
+      id: 5,
+      heading: "Season 2",
+      subHeading: [
+        `VENUE- Janson's Institute Of Technology & CoAstt High Performance Centre, Coimbatore`,
+        "FINAL EVENT- 1-4 SEPTEMBER 2026",
+        "PRIZE MONEY- upto 2 LAKHS",
+        "REGISTRATION FEE- 25,000 INR + GST",
       ],
       awards: null,
     },
@@ -253,7 +307,16 @@ export const upcommingEvents = [
 
 export const aboutUs = {
   description:
-    "Hindustan Motorsports was established back in 2015,We have been one of the trusted and prominent motorsports company. We don’t just organize events,We craft a legacy of thrilling races,our events are a celebration of skill,innovation and relentless pursuit of excellence.Join us on the track for an unparalleled racing experience that goes beyond competition.We are not just a firm, We are a community united by a passion for motorsports.",
+    `Founded in 2015, Hindustan Motorsports has emerged as one of India's most trusted and dynamic motorsports organizations. We go beyond just organizing events — we craft a legacy of speed, innovation, and engineering excellence. <br>
+
+With 5 successful national-level events organized and association with 28 major motorsports events across India, our journey is a testament to our commitment, consistency, and community-building in the racing domain.
+
+At Hindustan Motorsports, every event is a celebration of skill, creativity, and the relentless pursuit of performance. Whether it's Go-Karts, E-Bikes, or hybrid vehicle competitions, we bring together future-ready technology, passionate youth, and real-world racing environments.
+
+We are more than a company — we are a community driven by the love for motorsports. We empower young engineers, collaborate with institutions, and provide a national platform where ideas race alongside machines.
+
+Join us on the track — where competition meets collaboration, and engineering meets adrenaline.
+Hindustan Motorsports — Fueling Passion. Engineering the Future.`,
   companyLogo: assets.global.hindustanMotorsportsLogo,
 };
 
@@ -264,12 +327,12 @@ export const teamData = [
     img: "./teamMembers/SAGAR_VYAS.jpg",
     id: 1,
   },
-  {
-    member_name: "MR. YASHWARDHAN SINGH CHANDRAWAT",
-    designation: "C.O.O",
-    img: "./teamMembers/YASHWARDHAN_SINGH_CHANDRAWAT.PNG",
-    id: 2,
-  },
+  // {
+  //   member_name: "MR. YASHWARDHAN SINGH CHANDRAWAT",
+  //   designation: "C.O.O",
+  //   img: "./teamMembers/YASHWARDHAN_SINGH_CHANDRAWAT.PNG",
+  //   id: 2,
+  // },
   {
     member_name: "MR. PRATYAKSH MAITHIL",
     designation: "C.M.O",
@@ -282,12 +345,12 @@ export const teamData = [
     img: "./teamMembers/ABHINAY_NIGAM.jpg",
     id: 4,
   },
-  {
-    member_name: "MR. SOMESH THAKUR",
-    designation: "EVENT HEAD",
-    img: "./teamMembers/Somesh_Thakur.jpeg",
-    id: 5,
-  },
+  // {
+  //   member_name: "MR. SOMESH THAKUR",
+  //   designation: "EVENT HEAD",
+  //   img: "./teamMembers/Somesh_Thakur.jpeg",
+  //   id: 5,
+  // },
   {
     member_name: "MR. GAURAV SINGH RATHORE",
     designation: "MANUFACTURING HEAD",
@@ -318,12 +381,12 @@ export const teamData = [
   //   img: "./teamMembers/Princy_Shaktawat.jpg",
   //   id: 6,
   // },
-  {
-    member_name: "MR. YASH GOKHARE",
-    designation: "OFFICIAL",
-    img: "./teamMembers/YASH_GOKHARE.JPG",
-    id: 7,
-  },
+  // {
+  //   member_name: "MR. YASH GOKHARE",
+  //   designation: "OFFICIAL",
+  //   img: "./teamMembers/YASH_GOKHARE.JPG",
+  //   id: 7,
+  // },
   {
     member_name: "MR. RAHUL BAVISKAR",
     designation: "OFFICIAL",
@@ -342,18 +405,18 @@ export const teamData = [
     img: "./teamMembers/Tushar_Kumbharde.jpg",
     id: 10,
   },
-  {
-    member_name: "MR. TEJAS PAMPATTIWAR",
-    designation: "OFFICIAL",
-    img: "./teamMembers/TEJAS_PAMPATTIWAR.jpeg",
-    id: 11,
-  },
-  {
-    member_name: "MR. CHETAN PATIL",
-    designation: "OFFICIAL",
-    img: "./teamMembers/CHETAN_PATIL.jpeg",
-    id: 12,
-  },
+  // {
+  //   member_name: "MR. TEJAS PAMPATTIWAR",
+  //   designation: "OFFICIAL",
+  //   img: "./teamMembers/TEJAS_PAMPATTIWAR.jpeg",
+  //   id: 11,
+  // },
+  // {
+  //   member_name: "MR. CHETAN PATIL",
+  //   designation: "OFFICIAL",
+  //   img: "./teamMembers/CHETAN_PATIL.jpeg",
+  //   id: 12,
+  // },
   {
     member_name: "MR. ABHAY VERMA",
     designation: "OFFICIAL",
@@ -472,7 +535,7 @@ export const contactDetails = [
   {
     id: 1,
     title: "Email Address",
-    description: "hindustanmotorsports@gmail.com",
+    description: "info@hindustanmotorsports.in",
     icon: (
       <svg
         className="h-full sm:size-[24px] size-[16px]"
@@ -489,13 +552,13 @@ export const contactDetails = [
         />
       </svg>
     ),
-    link: "mailto:hindustanmotorsports@gmail.com",
+    link: "mailto:info@hindustanmotorsports.in",
     isClickable: true,
   },
   {
     id: 2,
     title: "Call Us",
-    description: <span>+91 920-278-4505 | +91 700-018-0509</span>,
+    description: <span>+91 700-018-0509</span>,
     icon: (
       <svg
         className="h-full sm:size-[24px] size-[16px]"
@@ -618,13 +681,13 @@ export const navItems = [
     id: 9,
     externalRoute: false,
   },
-  {
-    itemName: "Store",
-    route: ROUTES.store,
-    children: null,
-    id: 10,
-    externalRoute: true,
-  },
+  // {
+  //   itemName: "Store",
+  //   route: ROUTES.store,
+  //   children: null,
+  //   id: 10,
+  //   externalRoute: true,
+  // },
   {
     itemName: "Gallery",
     route: ROUTES.gallery,

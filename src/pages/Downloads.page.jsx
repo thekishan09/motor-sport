@@ -19,30 +19,42 @@ function DownloadsPage() {
             Get rule book and brochure
           </div>
 
-          <div className="mx-auto">
+          <div className="mx-auto" style={{ display: "flex", justifyContent:"space-between", width: "70%" }}>
             <a
               href="https://drive.google.com/drive/folders/1l5M7YJ9BjRuR_LIKzwSqLfBeC7ZV1efw"
               target="_blank"
             >
-              <ThemeButton label="Download" />
+              <ThemeButton label="Season 5" />
+            </a> 
+            <a
+              href="https://drive.google.com/drive/folders/1umsyuKpTrrd35wS-Z_Q3CBgmEvL0ZVFr"
+              target="_blank"
+            >
+              <ThemeButton label="Season 6" />
             </a>
           </div>
         </div>
         {/* card 2 */}
         <div className="group bg-black bg-opacity-80  flex flex-col items-center md:p-10 p-5 rounded-2xl shadow-md shadow-primary  hover:shadow-NeonBlue transition duration-700">
           <div className="text-primary text-lg md:text-xl text-center font-header md:mb-10 mb-5 uppercase">
-            Indian E-Bike 2025 Championship
+            Indian E-Bike Championship
           </div>
           <div className="text-base md:text-lg mb-8 font-body leading-relaxed text-secondary uppercase text-center flex-grow flex md:items-start items-center">
             Get rule book and brochure
           </div>
 
-          <div className="mx-auto">
+          <div className="mx-auto" style={{ display: "flex", justifyContent:"space-between", width: "70%" }}>
             <a
               href="https://drive.google.com/drive/folders/1gf3x1B2iT0HItnMghxpMjSUExbZdeCWj"
               target="_blank"
             >
-              <ThemeButton label="Download" />
+              <ThemeButton label="Season 1" />
+            </a> 
+            <a
+              href="https://drive.google.com/drive/folders/1MBkmNPKwdyxU_aNlMvRn6xQ15PX2Wfxc"
+              target="_blank"
+            >
+              <ThemeButton label="Season 2" />
             </a>
           </div>
         </div>

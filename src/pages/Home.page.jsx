@@ -22,15 +22,15 @@ const HomePage = () => {
       <div className="">
         <SeasonSection />
       </div>
-
+      <div className="">
+        <SeasonSection type = "E-Bike"/>
+      </div>
       <div className="">
         <GallerySection />
       </div>
-
       <div className="">
         <VideoSection />
       </div>
-
       <div className="">
         <SupportSection />
       </div>

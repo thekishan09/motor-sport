@@ -1,45 +1,79 @@
-import { eBikeEvents } from "../constants";
+import { useEffect, useState } from "react";
+import { bikeEvents, eBikeEvents } from "../constants";
+import { useLocation } from "react-router-dom";
+import ThemeButton from "../customComponents/ThemeButton";
+import SeasonPage from "./Season.page";
+
+const SeasonCard = ({ year, heading, content, img, handleKartEvent, id }) => {
+
+  return (
+    <div className="min-h-96 p-6 bg-black items-center rounded-2xl transition duration-700 cursor-pointer shadow-lg shadow-gray-800 hover:border-gray-800 flex flex-col">
+      <h3 className="text-primary text-xl md:text-3xl text-center font-header mb-2 uppercase">
+        {heading ?? "heading"}
+      </h3>
+
+      <div className=" items-center mb-5">
+        <span className="text-neutral font-header font-bold md:text-base text-sm">
+          {year ?? "year"}
+        </span>
+      </div>
+
+      <div className="mb-5">
+        <img
+          
+          src={img}
+          className="md:h-28 h-24 w-auto"
+          alt="Indian Karting Logo"
+        />
+      </div>
+
+      <ul className="md:text-base text-sm mb-8 font-body leading-relaxed text-secondary uppercase list-disc list-inside">
+        {content?.slice(0, 4)?.map((i) => (
+          <li className="mb-2" key={i}>
+            {i}
+          </li>
+        ))}
+      </ul>
+      <div className="mx-auto mt-auto">
+        <ThemeButton label="learn more" onClick={() => handleKartEvent(id)} />
+      </div>
+    </div>
+  );
+};
 
 function EBikePage() {
-  const eventData= eBikeEvents[0];
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const { state } = useLocation();
+
+  const handleKartEvent = (index) => {
+    setSelectedIndex(index);
+  };
+  function ScrollToTop() {
+    useEffect(() => {
+   window.scrollTo(0, 0);
+    }, [state , selectedIndex]);
+  
+    return null;
+  }
   return (
-    <section className="bg-gradient-to-r from-black via-gray-950 to-gray-950 py-24 flex items-center justify-center font-body min-h-dvh">
-      <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8 flex-grow mb-20">
-        <div className="grid grid-cols-1 md:items-center  md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
-          <div className="flex flex-col lg:py-5">
-            <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:leading-tight lg:text-5xl">
-              {eventData.data.heading}
-            </h2>
-
-            <div className="">
-              <p className="text-base font-semibold mt-6 text-lime-500">
-                {eventData.host}
-              </p>
-              <p className="text-neutral font-header">{eventData.year}</p>
-
-              <div className=" mt-8">
-                <ul className=" text-neutral md:text-sm text-xs font-body list-disc uppercase ml-4 font-semibold">
-                  {eventData.data.subHeading.map((i) => (
-                    <li className="mb-2" key={i}>
-                      {i}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-2xl size-fit p-10">
-            <img
-              
-              className="size-full aspect-auto"
-              alt="null"
-              src={eventData.img}
+    <>
+    <ScrollToTop />
+      {selectedIndex >= 0 || state?.id ? <SeasonPage id={selectedIndex >= 0 ? selectedIndex : state?.id} handleKartEvent={handleKartEvent} isHome={state?.isHome} type={"E-Bike"}/> : <section className={`py-24 px-8 relative bg-gradient-to-r from-black via-gray-950 to-gray-950`}>
+        <div className="grid md:grid-cols-2 grid-cols-1 md:gap-20 gap-10">
+          {bikeEvents?.map((item, index) => (
+            <SeasonCard
+              key={index}
+              id={index}
+              year={item?.year}
+              heading={item?.data?.heading}
+              content={item?.data?.subHeading}
+              img={item?.img}
+              handleKartEvent={handleKartEvent}
             />
-          </div>
+          ))}
         </div>
-      </div>
-    </section>
+      </section>}
+    </>
   );
 }
 

@@ -75,7 +75,7 @@ body {
     0 100%
   );
   height: 40px;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 14px;
   letter-spacing: 1.2px;
   transition: 0.2s 0.1s;
@@ -119,4 +119,9 @@ body {
   .animate-infinite-scroll {
     -webkit-overflow-scrolling: touch;
   }
+}
+
+ul {
+  list-style-position: outside !important;
+  max-width: 653px;
 }

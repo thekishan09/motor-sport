@@ -43,7 +43,17 @@ const AboutUsPage = () => {
               About Us
             </h2>
             <p className="text-base md:text-lg mb-8 font-body leading-relaxed text-neutral">
-              {aboutUs.description}
+              {/* {aboutUs.description} */}
+              Founded in 2015, Hindustan Motorsports has emerged as one of India's most trusted and dynamic motorsports organizations. We go beyond just organizing events — we craft a legacy of speed, innovation, and engineering excellence. 
+              <br/>
+              With 5 successful national-level events organized and association with 28 major motorsports events across India, our journey is a testament to our commitment, consistency, and community-building in the racing domain.
+              <br/>
+              At Hindustan Motorsports, every event is a celebration of skill, creativity, and the relentless pursuit of performance. Whether it's Go-Karts, E-Bikes, or hybrid vehicle competitions, we bring together future-ready technology, passionate youth, and real-world racing environments.
+              <br/>
+              We are more than a company — we are a community driven by the love for motorsports. We empower young engineers, collaborate with institutions, and provide a national platform where ideas race alongside machines.
+              <br/>
+              Join us on the track — where competition meets collaboration, and engineering meets adrenaline.
+              Hindustan Motorsports — Fueling Passion. Engineering the Future.
             </p>
           </div>
         </div>

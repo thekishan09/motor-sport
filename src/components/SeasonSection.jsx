@@ -1,25 +1,25 @@
 import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { assets } from "../assets";
-import { ROUTES, kartEvents } from "../constants";
+import { ROUTES, bikeEvents, kartEvents } from "../constants";
 import CustomRightArrow from "../customComponents/CustomRightArrow";
 import ThemeButton from "../customComponents/ThemeButton";
 
-const SeasonSection = () => {
+const SeasonSection = ({type}) => {
   const navigate = useNavigate();
   const handleNavigate = (id) => {
-    navigate(ROUTES.goKart, { state: { id, isHome: true } });
+    navigate(type=== "E-Bike"? ROUTES.eBike: ROUTES.goKart, { state: { id, isHome: true } });
   }
   return (
-    <section className="relative bg-gradient-to-r from-black via-gray-950 to-gray-950 pb-20 px-8 min-h-dvh">
+    <section className="relative bg-gradient-to-r from-black via-gray-950 to-gray-950 px-8 min-h-dvh">
       <div className="flex items-center md:mb-12 mb-5">
         <CustomRightArrow />
         <h2 className="text-xl md:text-4xl text-white text-center font-header me-4">
-          Go-kart events
+          {type === "E-Bike" ? "E-Bike events" : "Go-kart events"}
         </h2>
         <hr className=" flex-grow  border-0 bg-gradient-to-r from-primary via-gray-950 to-gray-950 p-px  rounded-3xl" />
       </div>
-      <div className="flex xl:flex-row flex-col justify-between md:mb-20 mb-8">
+      <div className="flex xl:flex-row flex-col justify-between md:mb-20">
         <div className="md:max-w-lg xl:h-dvh xl:sticky top-0 mx-auto">
           <img
             
@@ -29,7 +29,62 @@ const SeasonSection = () => {
           />
         </div>
         <div className="flex flex-col gap-y-3 my-4">
-          {kartEvents.reverse()?.map((event, index) => {
+          {type === "E-Bike" ?  bikeEvents.reverse()?.map((event, index) => {
+            return (
+              <Fragment key={index}>
+                {/* bigger screen */}
+                <div className="sm:block hidden">
+                  <div className="grid grid-cols-[1fr_auto_1fr] gap-x-3 items-center mx-auto">
+                    {event.direction == "lft" ? (
+                      <EventCard
+                        heading={event.data.heading}
+                        content={event.data.subHeading}
+                        year={event.year}
+                        image={event.img}
+                        id={index}
+                        handleKartEvent={handleNavigate}
+                      />
+                    ) : (
+                      <div />
+                    )}
+
+                    <Pillar />
+
+                    {event.direction == "ryt" ? (
+                      <EventCard
+                        heading={event.data.heading}
+                        content={event.data.subHeading}
+                        year={event.year}
+                        image={event.img}
+                        id={index}
+                        handleKartEvent={handleNavigate}
+                      />
+                    ) : (
+                      <div />
+                    )}
+                  </div>
+                </div>
+                {/* Smaller screen */}
+                <div className="block sm:hidden">
+                  <div className="grid grid-flow-row-dense  gap-x-3 items-center mx-auto">
+                    <Pillar />
+                    <div className="col-span-2">
+                      <EventCard
+                        heading={event.data.heading}
+                        content={event.data.subHeading}
+                        year={event.year}
+                        image={event.img}
+                        id={index}
+                        handleKartEvent={handleNavigate}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                {index < bikeEvents?.length - 1 && <Circle />}
+              </Fragment>
+            );
+          }) : kartEvents.reverse()?.map((event, index) => {
             return (
               <Fragment key={index}>
                 {/* bigger screen */}
@@ -84,7 +139,7 @@ const SeasonSection = () => {
                 {index < kartEvents?.length - 1 && <Circle />}
               </Fragment>
             );
-          })}
+          }) }
         </div>
       </div>
       {/* <div className="flex flex-col md:flex-row justify-around items-center gap-10 md:mb-20 mb-8">
